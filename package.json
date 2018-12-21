@@ -1,0 +1,48 @@
+{
+  "name": "nibun-tree",
+  "version": "0.0.1",
+  "description": "A slightly naive implementation of a binary tree in Typescript",
+  "keywords": [
+    "binary tree",
+    "typescript"
+  ],
+  "main": "src/index.ts",
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "test": "jest",
+    "prepublishOnly": "npm run clean && npm run build && npm test",
+    "version": "git add -A",
+    "postversion": "git push && git push --tags"
+  },
+  "author": "Simon Leigh",
+  "license": "MIT",
+  "dependencies": {
+    "maybe-none": "0.0.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.4",
+    "jest": "^23.2.0",
+    "ts-jest": "^23.0.0",
+    "ts-loader": "^4.4.2",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "roots": [
+      "./tests"
+    ]
+  }
+}
