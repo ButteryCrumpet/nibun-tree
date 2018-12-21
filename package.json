@@ -6,9 +6,10 @@
     "binary tree",
     "typescript"
   ],
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf lib",
+    "clean": "rm -rf dist",
     "build": "tsc -p .",
     "watch": "tsc -w -p .",
     "test": "jest",
