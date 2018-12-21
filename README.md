@@ -2,11 +2,11 @@ Nibun-tree
 ==========
 
 Nibun-tree is a functional implementation of a `Binary Search Tree` in Typescript. \
-All functions are curried and return a new `BTree`. \
+All functions are curried and return a new `BTree`.
 
 # Documentation
 
-Remember to import the module \
+Remember to import the module.
 
 ```typescript
 
@@ -18,7 +18,7 @@ import * as Tree from "nibun-tree"
 
 Nibun-tree's `BTree<K, T>` type, where `K` is the type of key and `T` is \
 the type of data, is implemented as a `Maybe<BNode<K,T>>`. \
-As such a tree may be empty, represented as a `None` type. \
+As such a tree may be empty, represented as a `None` type.
 
 ```typescript
 
@@ -37,7 +37,7 @@ type BTNode<K, T> = {
 
 ### empty
 
-Creates an empty tree. \
+Creates an empty tree.
 
 ```typescript
 type empty = () => BTree<any, any>
@@ -48,7 +48,7 @@ const emptyTree = Tree.empty()
 
 ### singleton
 
-Creates a tree with a single node. \
+Creates a tree with a single node.
 
 ```typescript
 type singleton = <K, T>(key: K) => (value: T) => BTree<K, T>
@@ -59,7 +59,7 @@ const tree = Tree.singleton(10)("value") // BTree<number, string>
 
 ### insert
 
-Insert a new value into tree returning a new `BTree<K, T>`. \
+Insert a new value into tree returning a new `BTree<K, T>`.
 
 ```typescript
 type insert = <K>(key: K) => <T>(value: T) => (tree: BTree<K, T>) => BTree<K, T>
@@ -72,7 +72,7 @@ const tree = insertStuff(Tree.empty())
 ### get
 
 Gets a value in the form of a `Maybe<T>` from a tree using a key. \
-Returns `Some<T>` if key exists, else a `None` \
+Returns `Some<T>` if key exists, else a `None`
 
 ```typescript
 type get = <K>(key: K) => <T>(tree: BTree<K, T>) => Maybe<T>
@@ -88,7 +88,7 @@ const value2 = getKeyTwo(tree) // None
 
 ### remove
 
-Removes a value from a tree returning a new `BTree<K, T>` \
+Removes a value from a tree returning a new `BTree<K, T>`
 
 ```typescript
 type remove = <K>(key: K) => <T>(tree: BTree<K, T>) => BTree<K, T>
@@ -101,7 +101,7 @@ const newTree = removeKeyTen(tree)
 
 ### foldl
 
-Folds over a tree from left to right (smallest to largest) \
+Folds over a tree from left to right (smallest to largest)
 
 ```typescript
 type fold = <K, T, U>(fn: (key: K, value: T, acc: U) => U) => (start: U) => (tree: BTree<K, T>) => U
