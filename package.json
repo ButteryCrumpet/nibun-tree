@@ -1,6 +1,6 @@
 {
   "name": "nibun-tree",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A slightly naive implementation of a binary tree in Typescript",
   "keywords": [
     "binary tree",
